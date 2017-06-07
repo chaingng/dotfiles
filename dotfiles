@@ -105,6 +105,12 @@ initialize() {
       rbenv global ${latest}
     fi
   fi
+
+  if has "git"; then
+    git config --global user.name "Takatomo Honda"
+    git config --global user.email chngng0103@gmail.com
+  fi
+
   if has "pyenv"; then
     # without - is normal version
     latest=`pyenv install --list | grep -v - | grep -oe '\d\.\d\.\d$' | tail -n 1`
