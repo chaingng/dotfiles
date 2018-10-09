@@ -109,6 +109,8 @@ initialize() {
   cp /usr/local/Cellar/git/`git --version | awk '{print $3}'`/etc/bash_completion.d/git-completion.bash ./
   mv git-completion.bash /usr/local/git/contrib/completion/
 
+  brew install git
+
   echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
 }
 
