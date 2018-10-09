@@ -111,23 +111,6 @@ initialize() {
     git config --global user.email chngng0103@gmail.com
   fi
 
-  if has "pyenv"; then
-    # without - is normal version
-    latest=`pyenv install --list | grep -v - | grep -oe '\d\.\d\.\d$' | tail -n 1`
-    current=`pyenv versions | grep -oe '\d\.\d\{1,\}\.\d\{1,\}\([ ]\|$\)' | tail -n 1 | tr -d "[:space:]"`
-    if [ ${current:-x} != ${latest} ]; then
-      PYTHON_CONFIGURE_OPTS="--enable-framework"
-      pyenv install ${latest}
-      pyenv global ${latest}
-      pyenv virtualenv -f ${latest} neovim3
-      pyenv activate neovim3
-      pip install neovim
-    fi
-  fi
-  if [ ! -d $HOME/.cargo ]; then
-    curl https://sh.rustup.rs -sSf | sh -s -- -y
-  fi
-
   sudo mkdir -p /usr/local/git/contrib/completion/
   cp /usr/local/Cellar/git/`git --version | awk '{print $3}'`/etc/bash_completion.d/git-completion.bash ./
   mv git-completion.bash /usr/local/git/contrib/completion/
