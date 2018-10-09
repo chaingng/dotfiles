@@ -83,7 +83,6 @@ link_files() {
 
 initialize() {
 
-  [ ! -d ${HOME}/.zplug ] && curl -sL zplug.sh/installer | zsh
   [ ! -d ${HOME}/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
 
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -104,11 +103,6 @@ initialize() {
       rbenv install ${latest}
       rbenv global ${latest}
     fi
-  fi
-
-  if has "git"; then
-    git config --global user.name "Takatomo Honda"
-    git config --global user.email chngng0103@gmail.com
   fi
 
   sudo mkdir -p /usr/local/git/contrib/completion/
