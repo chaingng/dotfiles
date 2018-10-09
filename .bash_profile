@@ -13,3 +13,5 @@ fi
 if [ -f /usr/local/bin/google-cloud-sdk/completion.bash.inc ]; then
   source '/usr/local/bin/google-cloud-sdk/completion.bash.inc'
 fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"

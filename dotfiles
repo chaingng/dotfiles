@@ -64,8 +64,6 @@ if [ ! -d ${DOT_DIRECTORY} ]; then
 fi
 
 cd ${DOT_DIRECTORY}
-source ./lib/brew
-source ./lib/go
 
 link_files() {
   for f in .??*
@@ -84,11 +82,13 @@ link_files() {
 }
 
 initialize() {
-  run_brew
-  run_go
 
   [ ! -d ${HOME}/.zplug ] && curl -sL zplug.sh/installer | zsh
   [ ! -d ${HOME}/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
+
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
   set +e
   if has "nodebrew"; then
@@ -111,22 +111,9 @@ initialize() {
     git config --global user.email chngng0103@gmail.com
   fi
 
-  if has "pyenv"; then
-    # without - is normal version
-    latest=`pyenv install --list | grep -v - | grep -oe '\d\.\d\.\d$' | tail -n 1`
-    current=`pyenv versions | grep -oe '\d\.\d\{1,\}\.\d\{1,\}\([ ]\|$\)' | tail -n 1 | tr -d "[:space:]"`
-    if [ ${current:-x} != ${latest} ]; then
-      PYTHON_CONFIGURE_OPTS="--enable-framework"
-      pyenv install ${latest}
-      pyenv global ${latest}
-      pyenv virtualenv -f ${latest} neovim3
-      pyenv activate neovim3
-      pip install neovim
-    fi
-  fi
-  if [ ! -d $HOME/.cargo ]; then
-    curl https://sh.rustup.rs -sSf | sh -s -- -y
-  fi
+  sudo mkdir -p /usr/local/git/contrib/completion/
+  cp /usr/local/Cellar/git/`git --version | awk '{print $3}'`/etc/bash_completion.d/git-completion.bash ./
+  mv git-completion.bash /usr/local/git/contrib/completion/
 
   echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
 }
