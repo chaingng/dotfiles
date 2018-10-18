@@ -7,6 +7,7 @@
 - `xcode-select --install`
 - install [totalspaces2](https://totalspaces.binaryage.com/)
 - ライブ変換を無効化(システム環境設定>キーボード>入力ソース>ライブ変換のチェックを外す)
+- コンソールの表示名を変更(システム環境設定＞共有＞コンピュータ名を変更)
 
 ## Initialize
 
