@@ -2,12 +2,15 @@
 
 ## Before install
 - install [iterm2](https://www.iterm2.com/)
-- キーボード＞入力ソースで文字切り替えを変更
+- 文字切り替えのショートカットを変更
+  - キーボード＞入力ソース
 - mac用JDKの[インストール](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 
 - `xcode-select --install`
 - install [totalspaces2](https://totalspaces.binaryage.com/)
-- ライブ変換を無効化(システム環境設定>キーボード>入力ソース>ライブ変換のチェックを外す)
-- コンソールの表示名を変更(システム環境設定＞共有＞コンピュータ名を変更)
+- ライブ変換を無効化
+  - システム環境設定>キーボード>入力ソース>ライブ変換のチェックを外す
+- コンソールの表示名を変更
+  - システム環境設定＞共有＞コンピュータ名を変更
 - スクリーンショットの保存先をpictureに変更
   - `defaults write com.apple.screencapture location ~/Pictures/`
 
