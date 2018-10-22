@@ -14,6 +14,7 @@
   - システム環境設定＞共有＞コンピュータ名を変更
 - スクリーンショットの保存先をpictureに変更
   - `defaults write com.apple.screencapture location ~/Pictures/`
+- [ユーザ辞書を追加](https://pc-karuma.net/mac-user-dictionary/)
 
 ## Initialize
 
