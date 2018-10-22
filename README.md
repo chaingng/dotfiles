@@ -1,7 +1,7 @@
 # dotfiles
 
 ## Before install
-- install　followings
+- install followings
   - [iterm2](https://www.iterm2.com/)
   - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
   - [totalspaces2](https://totalspaces.binaryage.com/)
