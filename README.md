@@ -1,12 +1,13 @@
 # dotfiles
 
 ## Before install
-- install [iterm2](https://www.iterm2.com/)
+- install　followings
+  - [iterm2](https://www.iterm2.com/)
+  - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+  - [totalspaces2](https://totalspaces.binaryage.com/)
+- `xcode-select --install`
 - 文字切り替えのショートカットを変更
   - キーボード＞入力ソース
-- mac用JDKの[インストール](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 
-- `xcode-select --install`
-- install [totalspaces2](https://totalspaces.binaryage.com/)
 - ライブ変換を無効化
   - システム環境設定>キーボード>入力ソース>ライブ変換のチェックを外す
 - コンソールの表示名を変更
