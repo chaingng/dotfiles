@@ -17,6 +17,8 @@
 - [ユーザ辞書を追加](https://pc-karuma.net/mac-user-dictionary/)
 - 入力ソース切り替えにカタカナを表示させない
   - キーボード＞入力ソースでカタカナのチェックを外す
+- capslockを無効化する
+  - キーボード＞キーボード＞修飾キーでcapslockの動作を無効化
 
 ## Initialize
 
