@@ -15,6 +15,8 @@
 - スクリーンショットの保存先をpictureに変更
   - `defaults write com.apple.screencapture location ~/Pictures/`
 - [ユーザ辞書を追加](https://pc-karuma.net/mac-user-dictionary/)
+- 入力ソース切り替えにカタカナを表示させない
+  - キーボード＞入力ソースでカタカナのチェックを外す
 
 ## Initialize
 
