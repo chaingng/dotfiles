@@ -21,6 +21,8 @@
   - キーボード＞キーボード＞修飾キーでcapslockの動作を無効化
 - ピクチャをよく使う項目に入れる
   - サイドバーで、「ピクチャ」フォルダを「よく使う項目」サイドバーにドラッグ
+- iterm2のスクロールを無制限に
+  - preferences>profiles>terminalで「Unlimited Scrollback」にチェック
 
 ## Initialize
 
