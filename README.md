@@ -34,6 +34,7 @@ java -version
   - システム環境設定＞共有＞コンピュータ名を変更
 - スクリーンショットの保存先をpictureに変更
   - `defaults write com.apple.screencapture location ~/Pictures/`
+- ピクチャを[よく使う項目に追加](https://pc-karuma.net/mac-finder-sidebar-favorites-folder-add/)
 - [ユーザ辞書を追加](https://pc-karuma.net/mac-user-dictionary/)
 - 入力ソース切り替えにカタカナを表示させない
   - キーボード＞入力ソースでカタカナのチェックを外す
