@@ -48,7 +48,7 @@ java -version
 ## 実行
 
 ```
-bash -c "$(curl -fsSL raw.github.com/chaingng/dotfiles/master/dotfiles)"
+bash -c "$(curl -fsSL raw.github.com/chaingng/dotfiles/master/dotfiles)" -- -f -s deploy
 ```
 
 ## Initialize
