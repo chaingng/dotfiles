@@ -35,13 +35,12 @@ java -version
 - スクリーンショットの保存先をpictureに変更
   - `defaults write com.apple.screencapture location ~/Pictures/`
 - ピクチャを[よく使う項目に追加](https://pc-karuma.net/mac-finder-sidebar-favorites-folder-add/)
+  - サイドバーで、「ピクチャ」フォルダを「よく使う項目」サイドバーにドラッグ
 - [ユーザ辞書を追加](https://pc-karuma.net/mac-user-dictionary/)
 - 入力ソース切り替えにカタカナを表示させない
   - キーボード＞入力ソースでカタカナのチェックを外す
 - capslockを無効化する
   - キーボード＞キーボード＞修飾キーでcapslockの動作を無効化
-- ピクチャをよく使う項目に入れる
-  - サイドバーで、「ピクチャ」フォルダを「よく使う項目」サイドバーにドラッグ
 - iterm2のスクロールを無制限に
   - preferences>profiles>terminalで「Unlimited Scrollback」にチェック
 
