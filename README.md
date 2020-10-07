@@ -37,10 +37,11 @@ java -version
 - ピクチャを[よく使う項目に追加](https://pc-karuma.net/mac-finder-sidebar-favorites-folder-add/)
   - サイドバーで、「ピクチャ」フォルダを「よく使う項目」サイドバーにドラッグ
 - [ユーザ辞書を追加](https://pc-karuma.net/mac-user-dictionary/)
-- 入力ソース切り替えにカタカナを表示させない
-  - キーボード＞入力ソースでカタカナのチェックを外す
 - capslockを無効化する
   - キーボード＞キーボード＞修飾キーでcapslockの動作を無効化
+- [Google日本語入力をインストール](https://www.google.co.jp/ime/)
+- キーボード>入力ソースを以下だけにする
+<img width="631" alt="スクリーンショット 2020-10-07 15 14 22" src="https://user-images.githubusercontent.com/3523368/95294340-0c62cd00-08b0-11eb-81f1-a2b09b674183.png">
 - iterm2のスクロールを無制限に
   - preferences>profiles>terminalで「Unlimited Scrollback」にチェック
 
