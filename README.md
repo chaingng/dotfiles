@@ -3,6 +3,7 @@
 ## dotfileを入れる前にやっておくこと
 - 以下をインストール
   - [chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=ja)
+  - chromeでの各ユーザログイン
   - [iterm2](https://www.iterm2.com/)
   - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
   - [totalspaces2](https://totalspaces.binaryage.com/)
