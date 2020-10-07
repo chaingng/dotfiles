@@ -45,6 +45,12 @@ java -version
 - iterm2のスクロールを無制限に
   - preferences>profiles>terminalで「Unlimited Scrollback」にチェック
 
+## 実行
+
+```
+bash -c "$(curl -fsSL raw.github.com/chaingng/dotfiles/master/dotfiles)"
+```
+
 ## Initialize
 
 ```
