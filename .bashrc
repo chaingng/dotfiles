@@ -14,7 +14,7 @@ export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 export PATH="$HOME/.ndenv/bin:$PATH"
 eval "$(ndenv init -)"
-export JAVA_HOME=`/usr/libexec/java_home`
+#export JAVA_HOME=`/usr/libexec/java_home -v 11`
 export PATH=/usr/local/go/bin:$PATH
 
 cat <<EOM
@@ -39,7 +39,6 @@ return 1
 # check daemon
 checkDaemon "mysql" || mysql.server start
 checkDaemon "redis" || /usr/local/bin/redis-server &
-checkDaemon "memcache" || /usr/local/bin/memcached -d
 
 # load secret ENVs ("SHARED_MAIL_ADDR_PASS" etc)
 source ~/env_private
@@ -91,6 +90,10 @@ fi
 
 alias kindlegen=/Applications/KindleGen/kindlegen
 export PATH="$HOME/.phpenv/bin:$PATH"
+export PATH="/Users/hondatakatomo/flutter/bin:$PATH"
 eval "$(phpenv init -)"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH=$GOPATH/bin:$PATH
+export PLANTUML_LIMIT_SIZE=11289
