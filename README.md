@@ -1,7 +1,7 @@
 # dotfiles
 
-## Before install
-- install followings
+## dotfileを入れる前にやっておくこと
+- 以下をインストール
   - [chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=ja)
   - [iterm2](https://www.iterm2.com/)
   - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
