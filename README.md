@@ -7,6 +7,19 @@
   - [iterm2](https://www.iterm2.com/)
   - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
   - [totalspaces2](https://totalspaces.binaryage.com/)
+
+- openjdkのインストール
+
+最新バージョンは[ここ](http://jdk.java.net/)から確認
+
+```
+tar xvzf openjdk-11+28_osx-x64_bin.tar.gz
+sudo mv jdk-11.jdk /Library/Java/JavaVirtualMachines/
+/usr/libexec/java_home  -V
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
+java -version
+```
+
 - `xcode-select --install`
 - 文字切り替えのショートカットを変更
   - キーボード＞入力ソース
