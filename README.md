@@ -14,7 +14,7 @@
 
 ```
 curl - https://download.java.net/java/ga/jdk11/openjdk-11_osx-x64_bin.tar.gz
-tar xvzf openjdk-11+28_osx-x64_bin.tar.gz
+tar xvzf openjdk-11_osx-x64_bin.tar.gz
 sudo mv jdk-11.jdk /Library/Java/JavaVirtualMachines/
 /usr/libexec/java_home  -V
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
