@@ -22,6 +22,7 @@ java -version
 ```
 
 - `xcode-select --install`
+  - [xcodeとmacバージョン対応表](https://qiita.com/thinkalot/items/1dfdba642906c1bf1fd2)
 - 文字切り替えのショートカットを変更
   - キーボード>ショートカット>入力ソース
   
