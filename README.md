@@ -7,6 +7,8 @@
   - [iterm2](https://www.iterm2.com/)
   - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
   - [totalspaces2](https://totalspaces.binaryage.com/)
+    - [how to install](https://totalspaces.binaryage.com/installing-mojave)
+    - bugが出る場合は[こちら](https://discuss.binaryage.com/t/totalspaces-support-on-macos-10-15-catalina/7253/64)を参考に「ミッションコントロール＞個別の操作スペース」をオフにし再ログインする
 
 - openjdkのインストール
 
