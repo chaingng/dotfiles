@@ -23,6 +23,7 @@ java -version
 
 - `xcode-select --install`
   - [xcodeとmacバージョン対応表](https://qiita.com/thinkalot/items/1dfdba642906c1bf1fd2)
+  - コマンドラインでのインストールに失敗したら[公式](https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Fdownload%2Fmore%2F&rv=1)からインストール
 - 文字切り替えのショートカットを変更
   - キーボード>ショートカット>入力ソース
   
