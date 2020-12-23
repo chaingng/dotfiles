@@ -7,7 +7,11 @@
   - [iterm2](https://www.iterm2.com/)
   - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
   - [docker desktop](https://www.docker.com/blog/download-and-try-the-tech-preview-of-docker-desktop-for-m1/)
+  - [evernote](https://evernote.com/intl/jp/download)
   - [vscode](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)
+    - [キーボードショートカット設定](https://qiita.com/rai_suta/items/05e69f0b9065989b19c1)
+  - [chromedriver](https://chromedriver.chromium.org/downloads)
+  - [tunnelblick](https://tunnelblick.net/downloads.html)
 - ~/.ssh 以下の設定を移行
 
 - `xcode-select --install`
@@ -39,17 +43,24 @@
 
 ## 実行
 
+### ワンライナー　
 ```
 bash -c "$(curl -fsSL https://raw.github.com/chaingng/dotfiles/master/dotfiles)" -- -f -s deploy
 ```
 
+もしくはホームディレクトリ以下にgit clone後以下を実行
+
 ## Initialize
+
+パッケージのインストール
 
 ```
 $ ~/dotfiles/dotfiles initialize
 ```
 
 ## Deploy dotfiles
+
+dotfileに対してsymbolic linkを作成
 
 ```
 $ ~/dotfiles/dotfiles deploy
