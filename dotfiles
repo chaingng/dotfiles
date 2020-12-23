@@ -71,10 +71,9 @@ link_files() {
     # Force remove the vim directory if it's already there
     [ -n "${OVERWRITE}" -a -e ${HOME}/${f} ] && rm -f ${HOME}/${f}
     if [ ! -e ${HOME}/${f} ]; then
-      # If you have ignore files, add file/directory name here
       [[ ${f} = ".git" ]] && continue
       [[ ${f} = ".gitignore" ]] && continue
-      ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
+      ln -snfv ${DOT_DIRECTORY}/"$f" ${HOME}/"$f"
     fi
   done
 
@@ -85,19 +84,55 @@ initialize() {
 
   [ ! -d ${HOME}/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
 
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  # install brew
+  if has "brew"; then
+    echo "brew already installed"
+  else
+    mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+    sudo mv homebrew /opt/
+    export PATH=/opt/homebrew/bin:$PATH
+  fi
+
+  if [ ! -d ${HOME}/env_private ]; then
+    touch ${HOME}/env_private
+  fi
+  
+  if [ ! -d ${HOME}/.rbenv ]; then
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  fi
+
+
+  # curl -o ${HOME}/.zsh/git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+  # curl -o ${HOME}/.zsh/git-completion.zsh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh 
+  # curl -o ${HOME}/.zsh/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+
+  exit
+
+  if has "pyenv"; then
+    echo "pyenv already installed"
+  else
+    git clone git://github.com/yyuu/pyenv.git ${HOME}/.pyenv
+    . ${HOME}/.zshenv
+    pyenv install 3.8.7
+    pyenv global
+    . ${HOME}/.zshenv
+  fi
+
+  curl -O https://download.java.net/java/ga/jdk11/openjdk-11_osx-x64_bin.tar.gz
+  tar xvzf openjdk-11_osx-x64_bin.tar.gz
+  sudo mv jdk-11.jdk /Library/Java/JavaVirtualMachines/
+  export JAVA_HOME=`/usr/libexec/java_home -v 11`
+
+  
 
   set +e
   if has "nodebrew"; then
-    # Install latest node
     nodebrew install-binary latest && nodebrew use latest
   fi
   if has "rbenv"; then
     [ ! -d $(rbenv root)/plugins/rbenv-default-gems ] && git clone -q https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems
     [ ! -e $(rbenv root)/default-gems ] && cp ${DOT_DIRECTORY}/default-gems $(rbenv root)/default-gems
-    # Install latest ruby
     latest=`rbenv install -l | grep -v - | tail -n 1 | tr -d ' '`
     if ! rbenv versions | grep -e "${latest}\( \|$\)"; then
       rbenv install ${latest}
