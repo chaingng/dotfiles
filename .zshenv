@@ -23,15 +23,15 @@ return 1
 
 
 # Git
-# fpath=(~/.zsh $fpath)
-# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.zsh
-# autoload -Uz compinit && compinit
-# . ~/.zsh/git-prompt.sh
-# GIT_PS1_SHOWDIRTYSTATE=true
-# GIT_PS1_SHOWUNTRACKEDFILES=true
-# GIT_PS1_SHOWSTASHSTATE=true
-# GIT_PS1_SHOWUPSTREAM=auto
-# setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f$ '
+fpath=(~/.zsh $fpath)
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.zsh
+autoload -Uz compinit && compinit
+. ~/.zsh/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f$ '
 # # setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
 export PATH=~/bin:$PATH
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
@@ -53,7 +53,7 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE=?:??:exit
 
 # # .inputrcの読み込み
-[ -f ~/.inputrc ] && bind -f ~/.inputrc
+# [ -f ~/.inputrc ] && bind -f ~/.inputrc
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
