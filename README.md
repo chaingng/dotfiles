@@ -6,18 +6,9 @@
   - chromeでの各ユーザログイン
   - [iterm2](https://www.iterm2.com/)
   - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-- openjdkのインストール
-
-最新バージョンは[ここ](http://jdk.java.net/)から確認
-
-```
-curl - https://download.java.net/java/ga/jdk11/openjdk-11_osx-x64_bin.tar.gz
-tar xvzf openjdk-11_osx-x64_bin.tar.gz
-sudo mv jdk-11.jdk /Library/Java/JavaVirtualMachines/
-/usr/libexec/java_home  -V
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
-java -version
-```
+  - [docker desktop](https://www.docker.com/blog/download-and-try-the-tech-preview-of-docker-desktop-for-m1/)
+  - [vscode](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)
+- ~/.ssh 以下の設定を移行
 
 - `xcode-select --install`
   - [xcodeとmacバージョン対応表](https://qiita.com/thinkalot/items/1dfdba642906c1bf1fd2)
