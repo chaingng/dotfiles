@@ -6,10 +6,6 @@
   - chromeでの各ユーザログイン
   - [iterm2](https://www.iterm2.com/)
   - [mac用JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-  - [totalspaces2](https://totalspaces.binaryage.com/)
-    - [how to install](https://totalspaces.binaryage.com/installing-mojave)
-    - bugが出る場合は[こちら](https://discuss.binaryage.com/t/totalspaces-support-on-macos-10-15-catalina/7253/64)を参考に「ミッションコントロール＞個別の操作スペース」をオフにし再ログインする
-
 - openjdkのインストール
 
 最新バージョンは[ここ](http://jdk.java.net/)から確認
@@ -42,7 +38,6 @@ java -version
   - サイドバーで、「ピクチャ」フォルダを「よく使う項目」サイドバーにドラッグ
 - [ユーザ辞書を追加](https://pc-karuma.net/mac-user-dictionary/)
 - キーボード＞キーボード＞修飾キーでcapslockの動作を無効化
-- [Google日本語入力をインストール](https://www.google.co.jp/ime/)
 - キーボード>入力ソースを以下だけにする
 <img width="631" alt="スクリーンショット 2020-10-07 15 14 22" src="https://user-images.githubusercontent.com/3523368/95294340-0c62cd00-08b0-11eb-81f1-a2b09b674183.png">
 
@@ -52,7 +47,7 @@ java -version
 ## 実行
 
 ```
-bash -c "$(curl -fsSL raw.github.com/chaingng/dotfiles/master/dotfiles)" -- -f -s deploy
+bash -c "$(curl -fsSL https://raw.github.com/chaingng/dotfiles/master/dotfiles)" -- -f -s deploy
 ```
 
 ## Initialize
