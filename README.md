@@ -43,6 +43,8 @@ java -version
 
 - iterm2のスクロールを無制限に
   - preferences>profiles>terminalで「Unlimited Scrollback」にチェック
+- ホットコーナーでロック
+  - システム環境設定＞デスクトップとスクリーンセーバ＞スクリーンセーバ＞ホットコーナー
 
 ## 実行
 
