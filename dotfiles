@@ -103,11 +103,10 @@ initialize() {
   fi
 
 
-  # curl -o ${HOME}/.zsh/git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-  # curl -o ${HOME}/.zsh/git-completion.zsh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh 
-  # curl -o ${HOME}/.zsh/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+  mkdir ~/.zsh/completion/
+  curl -o ${HOME}/.zsh/completion/git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+  curl -o ${HOME}/.zsh/completion/_git https://raw.github.com/git/git/master/contrib/completion/git-completion.zsh
 
-  exit
 
   if has "pyenv"; then
     echo "pyenv already installed"

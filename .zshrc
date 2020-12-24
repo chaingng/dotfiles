@@ -55,3 +55,33 @@ zstyle ':completion:*:default' menu select=1
 # パス名を入力中にファイル名を一気に消すとき便利
 # 例： cd /home/me/somewhere<Ctrl-W> → cd /home/me/
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+
+# Git
+
+fpath=(~/.zsh/completion $fpath)
+
+autoload -U compinit
+compinit -u
+
+
+if [ -f ${HOME}/.zsh/git-prompt.sh ]; then
+        source ${HOME}/.zsh/git-prompt.sh
+fi
+
+
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+
+
+setopt PROMPT_SUBST
+PS1='%F{green}%n@%m%f: %F{cyan}%c %F{red}$(__git_ps1 "(%s)")%f\$ '
+
+# fpath=(~/.zsh $fpath)
+ 
+
+# if [ -f ${HOME}/.zsh/git-completion.zsh ]; then
+#         zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.zsh
+# fi
