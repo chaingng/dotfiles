@@ -98,33 +98,29 @@ bindkey '^N' history-beginning-search-forward
 
 
 # Git
-
+# zstyle ':completion:*:*:git:*' script ~/.zsh/completion/git-completion.bash
 fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit
+# autoload -U compinit
+# compinit -u
 
-autoload -U compinit
-compinit -u
+. ~/.zsh/git-prompt.sh
 
-
-if [ -f ${HOME}/.zsh/git-prompt.sh ]; then
-        source ${HOME}/.zsh/git-prompt.sh
-fi
-
+# 単語の入力途中でもTab補完を有効化
+setopt complete_in_word
+# 補完候補をハイライト
+zstyle ':completion:*:default' menu select=1
+# キャッシュの利用による補完の高速化
+zstyle ':completion::complete:*' use-cache true
+# 大文字、小文字を区別せず補完する
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# 補完リストの表示間隔を狭くする
+setopt list_packed
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
-
 setopt PROMPT_SUBST
 PS1='%F{green}%n@%m%f: %F{cyan}%c %F{red}$(__git_ps1 "(%s)")%f\$ '
-
-
-
-
-# fpath=(~/.zsh $fpath)
- 
-
-# if [ -f ${HOME}/.zsh/git-completion.zsh ]; then
-#         zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.zsh
-# fi
