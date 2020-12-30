@@ -98,13 +98,11 @@ bindkey '^N' history-beginning-search-forward
 
 
 # Git
-# zstyle ':completion:*:*:git:*' script ~/.zsh/completion/git-completion.bash
+# autoload探索するディレクトリをfpathで設定
 fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit
-# autoload -U compinit
-# compinit -u
-
-. ~/.zsh/git-prompt.sh
+# compinitシェル関数を自動読み込み & zsh形式での読込を指定
+autoload -Uz compinit
+compinit
 
 # 単語の入力途中でもTab補完を有効化
 setopt complete_in_word
@@ -117,10 +115,32 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 補完リストの表示間隔を狭くする
 setopt list_packed
 
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUPSTREAM=auto
+# 公式
+# prompt
+RPROMPT="%{${reset_color}%}"
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-setopt PROMPT_SUBST
-PS1='%F{green}%n@%m%f: %F{cyan}%c %F{red}$(__git_ps1 "(%s)")%f\$ '
+
+# # git-promptを読み込み
+# . ~/.zsh/git-prompt.sh
+# # PS1でプロンプト表示するときに変数を展開
+# setopt PROMPT_SUBST
+# # プロンプト表示設定
+# PS1='%F{green}%n@%m%f: %F{cyan}%c %F{red}$(__git_ps1 "(%s)")%f\$ '
+
+# addされてない変更(unstaged)があったとき"*"を表示、addされているがcommitされていない変更(staged)があったとき"+"を表示
+GIT_PS1_SHOWDIRTYSTATE=true
+# addされてない新規ファイルがある(untracked)とき"%"を表示
+GIT_PS1_SHOWUNTRACKEDFILES=true
+# stashになにか入っている(stashed)とき"$"を表示する
+GIT_PS1_SHOWSTASHSTATE=true
+# 現在のブランチが追跡ブランチより進んでいるとき">"を、遅れているとき"<"を、遅れてるけど独自の変更もあるとき"<>"を表示
+GIT_PS1_SHOWUPSTREAM=auto
