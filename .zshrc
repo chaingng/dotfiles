@@ -127,20 +127,3 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
-
-
-# # git-promptを読み込み
-# . ~/.zsh/git-prompt.sh
-# # PS1でプロンプト表示するときに変数を展開
-# setopt PROMPT_SUBST
-# # プロンプト表示設定
-# PS1='%F{green}%n@%m%f: %F{cyan}%c %F{red}$(__git_ps1 "(%s)")%f\$ '
-
-# addされてない変更(unstaged)があったとき"*"を表示、addされているがcommitされていない変更(staged)があったとき"+"を表示
-GIT_PS1_SHOWDIRTYSTATE=true
-# addされてない新規ファイルがある(untracked)とき"%"を表示
-GIT_PS1_SHOWUNTRACKEDFILES=true
-# stashになにか入っている(stashed)とき"$"を表示する
-GIT_PS1_SHOWSTASHSTATE=true
-# 現在のブランチが追跡ブランチより進んでいるとき">"を、遅れているとき"<"を、遅れてるけど独自の変更もあるとき"<>"を表示
-GIT_PS1_SHOWUPSTREAM=auto
