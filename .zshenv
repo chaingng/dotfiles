@@ -41,19 +41,12 @@ export HISTFILESIZE=100000
 export HISTCONTROL=ignoredups
 export HISTIGNORE=?:??:exit
 
-# # .inputrcの読み込み
-# [ -f ~/.inputrc ] && bind -f ~/.inputrc
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-alias kindlegen=/Applications/KindleGen/kindlegen
 export PATH="/Users/hondatakatomo/flutter/bin:$PATH"
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH=$GOPATH/bin:$PATH
 export PLANTUML_LIMIT_SIZE=11289
+alias kindlegen=/Applications/KindleGen/kindlegen
